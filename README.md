@@ -14,19 +14,22 @@ The following pacakges are also required
 
 ### Folder Structure
 
-.
-+-- requirements.txt
-+-- README.md
-+-- api_queries
-|   +-- query.py
-|   +-- run_api.py
-+-- figures
-+-- forecasting
-|   +-- forecast.py
-+-- raw_data
-+-- states
-+-- web_app
-|   +-- run_streamlit
+```
+aqi
+|   requirements.txt
+|   README.md
+|
+|___api_queries
+|   |   query.py
+|   |   run_api.py
+|   figures
+|___forecasting
+|   |   forecast.py
+|   raw_data
+|   states
+|___web_app
+    |   run_streamlit
+```
 
 ### Data
 
