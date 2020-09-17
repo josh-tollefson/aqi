@@ -52,7 +52,7 @@ def get_colormap(objname,vmax):
     return objmap
 
 
-infile = '.\\data\\O3_20190101_20191231.csv'
+infile = '.\\raw_data\\O3_20190101_20191231.csv'
 inmap = '.\\states\\states.shp'
 
 processed = load_data(infile)
