@@ -4,14 +4,17 @@
 
 ### <ins>Requirements</ins>
 
-- pandas
-- numpy
-- sklearn
-- statsmodels
-- matplotlib
-- streamlit
-- requests
-- json
+This program workson Anaconda Python v.3.7.6
+
+> conda install --yes python==3.7.6
+
+The following pacakges are also required
+
+> pip insall -r requirements.txt
+
+### <ins>Folder Structure</ins>
+
+
 
 ### <ins>Data</ins>
 
