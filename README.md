@@ -20,15 +20,15 @@ aqi
 |   README.md
 |
 |___api_queries
-|   |   query.py
-|   |   run_api.py
+    |   query.py
+    |   run_api.py
 |   figures
 |___forecasting
-|   |   forecast.py
+    |   forecast.py
 |   raw_data
 |   states
 |___web_app
-    |   run_streamlit
+    |   run_streamlit.py
 ```
 
 ### Data
