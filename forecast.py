@@ -14,7 +14,7 @@ def load_data(infile):
 	return df
 
 
-infile = '.\\data\\PM2.5_20190101_20191231.csv'
+infile = '.\\data\\O3_20190101_20191231.csv'
 o3 = load_data(infile)
 
 # 37.687526 for O3 and PM2p5
@@ -54,7 +54,7 @@ predictions_wk = list()
 predictions_dy = list()
 
 for t in range(len(test)):
-	model = ARIMA(history, order=(10,1,0))
+	model = ARIMA(history, order=(30,1,0))
 	model_fit = model.fit()
 	output = model_fit.forecast(7)
 	yhat = output[6]
@@ -69,6 +69,8 @@ print('Test MSE: %.3f' % error)
 # plot
 plt.plot(test, label='observed')
 plt.plot(predictions_dy, color='red', label='one day prediction')
-plt.plot(range(6, len(X) - size + 6), predictions_wk, ls='--', color='red', label='one week prediction')
+#plt.plot(range(6, len(X) - size + 6), predictions_wk, ls='--', color='red', label='one week prediction')
 plt.legend()
+plt.xlabel('Day')
+plt.ylabel('Concentration [ppb]')
 plt.show()
