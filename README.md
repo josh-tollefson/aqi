@@ -25,7 +25,7 @@ Running run_api.py allows the user to pull data.
 
 forecast.py - Currently running ARIMA model to forecast O3 concentration:
 
-![O3 2019 Prediction](./o3-2019-prediction.png?raw=true)
+![O3 2019 Prediction](./figures/o3-2019-prediction.png?raw=true)
 
 ### <ins>Web-App</ins>
 
