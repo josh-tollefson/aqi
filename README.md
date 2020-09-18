@@ -25,6 +25,7 @@ aqi
 |   figures
 |___forecasting
     |   forecast.py
+    |   run_forecast.py
 |   raw_data
 |   states
 |___web_app
@@ -41,9 +42,13 @@ Running run_api.py allows the user to pull data.
 
 ### Forecasting
 
-forecast.py - Currently running ARIMA model to forecast O3 concentration:
+forecasting - Run ARIMA model to forecast O3 concentration:
 
 ![O3 2019 Prediction](./figures/o3-2019-prediction.png?raw=true)
+
+Also runs multivarite time-series forecasting with VAR; 7-day forecast of O3 concentration and Temperature:
+
+![O3 Temp_2019 Prediction](./figures/o3-temp-forecast.png?raw=true)
 
 ### Web-App
 
