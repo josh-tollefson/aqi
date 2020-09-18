@@ -1,1 +1,5 @@
 run_api.py
+*.pyc
+*.ipynb_checkpoints*
+*__pycache__*
+	api_queries/testing_query_scripts.ipynb
