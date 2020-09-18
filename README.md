@@ -10,7 +10,7 @@ This program works on Anaconda Python v.3.7.6
 
 The following pacakges are also required
 
-> pip insall -r requirements.txt
+> pip install -r requirements.txt
 
 ### Folder Structure
 
@@ -52,4 +52,4 @@ Also runs multivarite time-series forecasting with VAR; 7-day forecast of O3 con
 
 ### Web-App
 
-run_streamlit.py - Currently only displays a date slider showing a map of California and how the O3 concentration varies with location. Each point represents a monitor from the AWS.
+run_streamlit.py - Currently only displays a date slider showing a map of California and how the O3 concentration varies with location. Each point represents a monitor from the AQS.
