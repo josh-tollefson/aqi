@@ -5,43 +5,33 @@ from pandas.plotting import autocorrelation_plot
 from sklearn.metrics import mean_squared_error
 import numpy as np
 
-### Would currently be nice to work with files that have columns of dates and values for each location
+def load_data(infile, VARIABLES):
 
-def load_data(infile):
-	df = pd.read_csv(infile,  usecols=('date_local', 'latitude', 'longitude', 'arithmetic_mean'))
-	print(df.head())
-	df.drop_duplicates(inplace=True, ignore_index=True)
-	df = df.groupby(['date_local', 'latitude', 'longitude']).mean().reset_index()
-	df['date_local'] = pd.to_datetime(df['date_local'])
-	return df
+	cols = ['Date', 'Lat', 'Lon'] + VARIABLES
+	df = pd.read_csv(infile,  usecols=cols)
+	return df.reset_index()
 
 
-infile = '.\\raw_data\\O3_20190101_20191231.csv'
-df1 = load_data(infile)
+VARIABLES = ['O3', 'PM10', 'NO2']
+infile = '.\\processed_data\\aqs_california_merged_20160101_20200831.csv'
+df = load_data(infile, VARIABLES)
 
-infile = '.\\raw_data\\Temperature_20190101_20191231.csv'
-df2 = load_data(infile)
+print(df.head(50))
 
-# 37.687526 for O3 and PM2p5
-# 35.0467 PM10
-
-filtered_df1 = df1.loc[df1['latitude'] == 37.687526].reset_index()
-filtered_df2 = df2.loc[df2['latitude'] == 37.687526].reset_index()
-
-filtered = df1.merge(df2.set_index('date_local'), on=['date_local', 'latitude', 'longitude'], how='left')
-filtered = filtered.loc[filtered['latitude'] == 32.67618].reset_index()
+filtered = df.loc[df['Lat'] == 33.996360].reset_index()
 
 import forecast
 
-series = filtered[['arithmetic_mean_x','arithmetic_mean_y']].fillna(method='bfill')
-series.rename(columns={'arithmetic_mean_x': 'O3 [ppb]', 'arithmetic_mean_y': 'Temperature [C]'}, inplace=True)
+series = filtered[VARIABLES].fillna(method='bfill').dropna()
+print(series.head())
+print(series.tail())
 
 ### import forecast module and do multivariate time analysis  
 f = forecast.Forecast(series)
 f.get_model()
 f.get_lag()
 f.run_forecast()
-f.plot_prediction(savefile='.\\figures\\o3-temp-forecast.png')
+f.plot_prediction(savefile='.\\figures\\o3-pm2p5-forecast.png')
 
 
 #################### IGNORE THINGS BELOW THIS COMMENT FOR NOW - CONTAINS OLD CODE I WANT TO KEEP
