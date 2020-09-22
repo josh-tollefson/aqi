@@ -1,21 +1,19 @@
 ,measurement,filename,units,duration
-0,PM2.5,Temperature_20170101_20171231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
-1,PM2.5,Pressure_20200101_20201231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
-2,PM2.5,PM2.5_20170101_20171231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
-3,PM2.5,NO2_20200101_20201231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
-4,PM2.5,CO_20180101_20181231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
-5,PM2.5,Pressure_20180101_20181231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
-6,PM2.5,NO2_20180101_20181231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
-7,PM2.5,CO_20200101_20201231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
-8,PM2.5,PM10_20160101_20161231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
-9,PM2.5,Humidity_20170101_20171231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
-10,PM2.5,Windspeed_20160101_20161231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
-11,PM2.5,SO2_20190101_20191231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
-12,PM2.5,Winddirection_20190101_20191231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
-13,PM2.5,O3_20160101_20161231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
-14,PM2.5,O3_20170101_20171231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
-15,PM2.5,Winddirection_20180101_20181231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
-16,PM2.5,Humidity_20160101_20161231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
-17,PM2.5,Windspeed_20170101_20171231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
-18,PM2.5,SO2_20180101_20181231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
-19,PM2.5,PM10_20170101_20171231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
+0,Temperature,../raw_data/Temperature_20170101_20171231.csv,Degrees Centigrade,24 HOUR
+1,Pressure,../raw_data/Pressure_20200101_20201231.csv,Millimeters (mercury),24 HOUR
+2,PM2.5,../raw_data/PM2.5_20170101_20171231.csv,Micrograms/cubic meter (LC),24-HR BLK AVG
+3,NO2,../raw_data/NO2_20200101_20201231.csv,Parts per billion,1 HOUR
+4,CO,../raw_data/CO_20180101_20181231.csv,Parts per million,8-HR RUN AVG END HOUR
+5,Pressure,../raw_data/Pressure_20180101_20181231.csv,Millimeters (mercury),24 HOUR
+6,NO2,../raw_data/NO2_20180101_20181231.csv,Parts per billion,1 HOUR
+7,CO,../raw_data/CO_20200101_20201231.csv,Parts per million,8-HR RUN AVG END HOUR
+8,PM10,../raw_data/PM10_20160101_20161231.csv,Micrograms/cubic meter (25 C),24-HR BLK AVG
+9,Humidity,../raw_data/Humidity_20170101_20171231.csv,Percent relative humidity,1 HOUR
+10,Windspeed,../raw_data/Windspeed_20160101_20161231.csv,Knots,1 HOUR
+11,SO2,../raw_data/SO2_20190101_20191231.csv,Parts per billion,24-HR BLK AVG
+12,Winddirection,../raw_data/Winddirection_20190101_20191231.csv,Degrees Compass,1 HOUR
+13,Winddirection,../raw_data/Winddirection_20180101_20181231.csv,Degrees Compass,1 HOUR
+14,Humidity,../raw_data/Humidity_20160101_20161231.csv,Percent relative humidity,1 HOUR
+15,Windspeed,../raw_data/Windspeed_20170101_20171231.csv,Knots,1 HOUR
+16,SO2,../raw_data/SO2_20180101_20181231.csv,Parts per billion,24-HR BLK AVG
+17,PM10,../raw_data/PM10_20170101_20171231.csv,Micrograms/cubic meter (25 C),24-HR BLK AVG
