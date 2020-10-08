@@ -4,51 +4,34 @@ import matplotlib.pyplot as plt
 from pandas.plotting import autocorrelation_plot
 from sklearn.metrics import mean_squared_error
 import numpy as np
-import os
 
 def load_data(infile, VARIABLES):
 
-# 	cols = ['Date', 'Lat', 'Lon'] + VARIABLES
-	cols = ['Date', 'Lat', 'Zipcode'] + VARIABLES
+	cols = ['Date', 'Lat', 'Lon'] + VARIABLES
 	df = pd.read_csv(infile,  usecols=cols)
-# 	return df.reset_index()
-	return df
+	return df.reset_index()
 
 
 VARIABLES = ['O3', 'PM10', 'NO2']
-infile = '../processed_data/aqs_california_merged_zipcode_20160101_20200831.csv'
+infile = '.\\processed_data\\aqs_california_merged_20160101_20200831.csv'
 df = load_data(infile, VARIABLES)
 
-print(df.head(10))
+print(df.head(50))
 
-# Remove whitespace from zipcode column
-df['Zipcode'] = df['Zipcode'].str.strip()
+filtered = df.loc[df['Lat'] == 33.996360].reset_index()
 
-# filtered = df.loc[df['Lat'] == 33.996360].reset_index()
-filtered = df.loc[df['Zipcode'] == '93062']
-filtered.head()
-
-import sys
-sys.path.insert(1, os.getcwd() + '../forecasting')
-import forecast_20201008
-
+import forecast
 
 series = filtered[VARIABLES].fillna(method='bfill').dropna()
 print(series.head())
 print(series.tail())
 
 ### import forecast module and do multivariate time analysis
-f = forecast_20201008.Forecast(series)
+f = forecast.Forecast(series)
 f.get_model()
 f.get_lag()
-
-# Save model
-# import pickle
-# pickle.dump(bow_transformer,open('arima_O3_PM10_NO2_zipcode-93062.sav','wb'))
-
-# Run Forecast
 f.run_forecast()
-f.plot_prediction(savefile='../figures/o3-pm2p5-forecast-test.png')
+f.plot_prediction(savefile='.\\figures\\o3-pm2p5-forecast.png')
 
 
 #################### IGNORE THINGS BELOW THIS COMMENT FOR NOW - CONTAINS OLD CODE I WANT TO KEEP

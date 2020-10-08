@@ -29,7 +29,7 @@ class Forecast():
 		Returns the lag order minimizing the give information criterion
 		INPUTS: nlag, int: max number of lags to loop through
 				ic, str: information criterion to measure
-				plotting, bool: optionally plot results
+				plotting, bool: optionally plot results 
 		'''
 
 		result = []
@@ -82,3 +82,12 @@ class Forecast():
 			plt.savefig(savefile)
 
 		plt.show()
+
+
+
+
+
+
+
+
+

@@ -56,7 +56,7 @@ infile = '.\\raw_data\\O3_20190101_20191231.csv'
 inmap = '.\\states\\states.shp'
 
 processed = load_data(infile)
-states_df = load_map(inmap) 
+states_df = load_map(inmap)
 
 fig, ax = plt.subplots(figsize=(12,12))
 ax.set_aspect('equal')
