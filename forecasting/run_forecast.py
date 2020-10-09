@@ -16,7 +16,10 @@ def load_data(infile, VARIABLES):
 
 
 VARIABLES = ['O3', 'PM10', 'NO2']
-infile = '../processed_data/aqs_california_merged_zipcode_20160101_20200831.csv'
+infile = os.path.join(
+			os.path.dirname(os.getcwd()), # <- this is the parent dir
+			'processed_data',
+			'aqs_california_merged_zipcode_20160101_20200831.csv')
 df = load_data(infile, VARIABLES)
 
 print(df.head(10))
@@ -42,13 +45,16 @@ f = forecast_20201008.Forecast(series)
 f.get_model()
 f.get_lag()
 
-# Save model
-# import pickle
-# pickle.dump(bow_transformer,open('arima_O3_PM10_NO2_zipcode-93062.sav','wb'))
-
 # Run Forecast
+f.train_model()
+
+# Save model
+f.save_model(savefile = 'arima_O3_PM10_NO2_zipcode-93062.sav')
+
+# Forecast
 f.run_forecast()
-f.plot_prediction(savefile='../figures/o3-pm2p5-forecast-test.png')
+f.plot_prediction(savefile = '../figures/o3-pm2p5-forecast-test.png')
+
 
 
 #################### IGNORE THINGS BELOW THIS COMMENT FOR NOW - CONTAINS OLD CODE I WANT TO KEEP

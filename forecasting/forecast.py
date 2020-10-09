@@ -49,14 +49,18 @@ class Forecast():
 			plt.ylabel(ic, fontsize=14)
 			plt.show()
 
-	def run_forecast(self, nobs=7):
+	def train_model(self):
+		self.X = self.df_diff.values
+		self.model_fit = self.model.fit(self.lag, self.ic)
 
-		X = self.df_diff.values
-		model_fit = self.model.fit(self.lag, self.ic)
-		self.predictions = model_fit.forecast(X[-self.lag:], nobs)
+	def save_model(self, savefile = 'saved_model.sav'):
+		import pickle
+		pickle.dump(self.model_fit, open(savefile, 'wb'))
+
+	def run_forecast(self, nobs=7):
+		self.predictions = self.model_fit.forecast(self.X[-self.lag:], nobs)
 
 	def plot_prediction(self, savefile=None):
-
 		nrow, ncol = self.df.shape
 
 		fig, axes = plt.subplots(nrows=ncol, ncols=1, figsize=(10, 3 * self.df.shape[1]))
