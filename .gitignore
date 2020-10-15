@@ -4,4 +4,5 @@ run_api.py
 *__pycache__*
 	api_queries/testing_query_scripts.ipynb
 *.DS_Store
-
+aarons_purpleair_loader/data_daily*
+api_queries/aarons_purpleair_loader/data_daily/*

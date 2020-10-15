@@ -206,6 +206,7 @@ class Channel():
                        start_month: int,
                        end_year: int,
                        end_month: int,
+                       end_day: int,
                        thingspeak_field: str,
                        print_url=False
                        ) -> pd.DataFrame:
@@ -235,7 +236,7 @@ class Channel():
             columns = parent_cols if self.type == 'parent' else child_cols
 
             to_week = datetime(year=start_year, month=start_month, day=1)
-            from_week = datetime(year=end_year, month=end_month, day=1)
+            from_week = datetime(year=end_year, month=end_month, day=end_day)
             delta =  -(to_week - from_week)
             if delta.days > 8000:
                 delta8000 = timedelta(days=8000)
