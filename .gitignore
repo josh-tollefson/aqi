@@ -6,3 +6,5 @@ run_api.py
 *.DS_Store
 aarons_purpleair_loader/data_daily*
 api_queries/aarons_purpleair_loader/data_daily/*
+vizualization/*.png
+vizualization/*.gif
